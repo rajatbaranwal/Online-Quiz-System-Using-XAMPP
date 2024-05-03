@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="script.js" defer></script>
+
+  <title>JavaScript Quiz App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div>
+    <h1 id="app">Quiz App</h1>
+    <form action="connect.php" method="POST" id="registrationForm">
+ 
+      <div>
+        <label for="username">Name:</label>
+        <input type="text" name="username" required>
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div>
+        <label for="section">Section:</label>
+        <input type="text" name="section" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      
+      </div>
+      <div>
+        <label for="studentID">Student ID:</label>
+    
+        <input type="text" id="studentID" name="studentID" required>
+      </div>
+
+      <input type="submit" id="register" class="btn btn-primary" name="register" value="register and start quiz">
+    </form>
+  </div>
+
+  <div id="quizContainer" style="display: none;">
+
+    <div id="timer">Time Remaining: <span id="time"></span></div>
+
+    <div id="quiz"></div>
+    <div id="result" class="result"></div>
+    <button id="submit" class="button">Submit</button>
+    <button id="retry" class="button hide">Retry</button>
+    <button id="showAnswer" class="button hide">Show Answer</button>
+  </div>
+  </div>
+   
+</body>
+
+
+</html> 
