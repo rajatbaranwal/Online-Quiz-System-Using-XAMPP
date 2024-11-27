@@ -1,47 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Pacifico&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #b9b3a9;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
   display: flex;
   justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
-  width: 450px;
+  width: 500px;
   padding: 20px;
   margin-top: 80px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-}
-#registrationForm{
-  text-align: left ;
-  text-decoration: #428bca;
-  text-shadow: #428bca;
-  
-}
-#timer{
-  color:red;
+  transform: scale(1);
+  transition: transform 0.3s ease;
 }
 
-#register{
-background-color: #589cdc;
-
-
-}
-#register:hover{
-background-color: #428bca;
+.container:hover {
+  transform: scale(1.05);
 }
 
 h1 {
+  font-family: 'Pacifico', cursive;
   text-align: center;
+  font-size: 36px;
+  color: #428bca;
+  text-shadow: 2px 2px #6a11cb;
+  margin-bottom: 20px;
+}
+
+#registrationForm {
+  text-align: left;
+}
+
+#registrationForm label {
+  font-weight: bold;
+  color: #333;
+}
+
+#registrationForm input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #6a11cb;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#registrationForm input:focus {
+  border-color: #2575fc;
+  outline: none;
+  box-shadow: 0 0 10px #2575fc;
+}
+
+#register {
+  background-color: #6a11cb;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+#register:hover {
+  background-color: #2575fc;
+  transform: translateY(-2px);
+}
+
+#timer {
+  color: #ff4757;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .question {
   font-weight: bold;
-  font-size: larger;
+  font-size: 20px;
   margin-bottom: 10px;
+  color: #333;
 }
 
 .options {
@@ -51,31 +96,52 @@ h1 {
 .option {
   display: block;
   margin-bottom: 10px;
+  font-size: 16px;
+  color: #555;
 }
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #428bca;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
   color: #fff;
-  border: none;
-  cursor: pointer;
   font-size: 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  margin-right: 10px;
+  border: none;
+  border-radius: 50px;
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
 }
 
 .button:hover {
-  background-color: #3071a9;
+  transform: scale(1.1);
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
 }
 
 .result {
   text-align: center;
   margin-top: 20px;
   font-weight: bold;
+  color: #6a11cb;
+  font-size: 18px;
 }
 
-.hide{
+.hide {
   display: none;
+}
+
+/* Add animation to inputs */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #6a11cb;
+  }
+  50% {
+    box-shadow: 0 0 20px #2575fc;
+  }
+  100% {
+    box-shadow: 0 0 10px #6a11cb;
+  }
+}
+
+#registrationForm input:focus {
+  animation: glow 1.5s infinite alternate;
 }
